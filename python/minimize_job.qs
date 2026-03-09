@@ -172,7 +172,7 @@
 # If you have VALET packages to load into the job environment,
 # uncomment and edit the following line:
 #
-vpkg_require python/3.8.6
+vpkg_require python/3.13.1
 
 #
 # Do general job environment setup:
