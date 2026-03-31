@@ -1,29 +1,30 @@
 COMPILE_ENV = darwin
 
-ifeq ($(COMPILE_ENV), local)
-  CXX = g++
+# OpenMP flag differs depending on compiler
+ifeq ($(CXX), icpx)
+  OMP_FLAG = -qopenmp
+else
+  OMP_FLAG = -fopenmp
 endif
-# If compiling on DARWIN, CXX should be set
-# (assuming compiler was loaded with vpkg_devrequire)
 
-# Optional compiler flags
-CXXFLAGS = -Wall -O3 -march=native
+# Compiler flags for OpenMP and optimizations (plus warnings)
+CXXFLAGS = $(OMP_FLAG) -O3 -march=native -Wall
 
 # Eigen include directory for installation on Ubuntu Linux with apt
-EIGEN_INC_LINUX=/usr/include/eigen3
-
-# Mandatory compiler flags, with optional ones appended
+# (can be used for testing on a local machine)
 ifeq ($(COMPILE_ENV), local)
-  ALL_CXXFLAGS = -I$(EIGEN_INC_LINUX) -fopenmp $(CXXFLAGS)
+  CPPFLAGS = -I/usr/include/eigen3 
 endif
+
+# Workaround for missing eigen3 from VALET's Eigen CPPFLAGS
 ifeq ($(COMPILE_ENV), darwin)
-  ALL_CXXFLAGS = -I${EIGEN_PREFIX}/include/eigen3 -fopenmp $(CXXFLAGS)
+  CPPFLAGS := $(CPPFLAGS)/eigen3
 endif
 
 .PHONY: clean
 
 matrix_multiply : matrix_multiply.cpp
-	$(CXX) $(ALL_CXXFLAGS) -o matrix_multiply matrix_multiply.cpp
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) matrix_multiply.cpp -o matrix_multiply
 
 clean : 
-	rm -f matrix_multiply
+	$(RM) matrix_multiply
