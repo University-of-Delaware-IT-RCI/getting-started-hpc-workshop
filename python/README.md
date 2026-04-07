@@ -1,5 +1,8 @@
 # Python Example Job
 
+For instructions on how to run the job, see [How to run the job](#how-to-run-the-job). The other sections provide additional
+background information on the job.
+
 ## What does this directory contain?
 
 The file `minimize.py` is a serial Python script that finds the minimum value of a function of one variable. It should run
@@ -18,7 +21,7 @@ loading the Python 3.13.1 interpreter with VALET.
 Once you have set your workgroup, run:
 
 ```
-sbatch minimize_job.qs`
+sbatch minimize_job.qs
 ```
 
 ## Job outputs
