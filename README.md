@@ -28,3 +28,7 @@ The `python` directory provides a serial job written in Python. It does not use 
 ## C++ example job
 
 The `cpp` directory provides a parallel job written in C++, with shared memory parallelism via OpenMP. It also uses the Eigen library for linear algebra operations.
+
+## Python example job array
+
+The `python-array` directory provides a serial job written in Python which can be submitted as a job array. It does not use any external Python packages, so the only requirement is to have a recent enough Python interpreter available.
