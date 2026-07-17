@@ -172,7 +172,7 @@
 # If you have VALET packages to load into the job environment,
 # uncomment and edit the following line:
 #
-vpkg_require python/3.13.1
+vpkg_require miniforge/25.11.0-1
 
 #
 # Do general job environment setup:
@@ -183,5 +183,5 @@ vpkg_require python/3.13.1
 # [EDIT] Add your script statements hereafter, or execute a script or program
 #        using the srun command.
 #
-srun python3 minimize.py
+srun python minimize.py
 

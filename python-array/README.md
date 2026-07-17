@@ -19,7 +19,7 @@ modified with the `--array` option to demonstrate job array submission.
 ## What software does the job depend on?
 
 The only requirement is a Python interpreter. The job script ensures that this requirement is fulfilled on DARWIN by
-loading the Python 3.13.1 interpreter with VALET.
+loading the Miniforge package with VALET.
 
 ## How to run the job
 
@@ -76,7 +76,7 @@ a number corresponding to the ID of your particular job.
 
 The contents of file `py_min-<job-id>_0.out` should be:
 ```
-Adding package `python/3.13.1` to your environment
+Adding package `miniforge/25.11.0-1` to your environment
 
 Initial guess for minimum location: -1.0
 
@@ -95,7 +95,7 @@ Step 9: 0.16143936157119554
 
 The contents of file `py_min-<job-id>_1.out` should be:
 ```
-Adding package `python/3.13.1` to your environment
+Adding package `miniforge/25.11.0-1` to your environment
 
 Initial guess for minimum location: 0.0
 
@@ -114,7 +114,7 @@ Step 9: 0.16143936157119554
 
 The contents of file `py_min-<job-id>_2.out` should be:
 ```
-Adding package `python/3.13.1` to your environment
+Adding package `miniforge/25.11.0-1` to your environment
 
 Initial guess for minimum location: 1.0
 

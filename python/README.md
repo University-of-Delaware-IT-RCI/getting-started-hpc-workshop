@@ -14,7 +14,7 @@ based on the DARWIN job script template for a serial job.
 ## What software does the job depend on?
 
 The only requirement is a Python interpreter. The job script ensures that this requirement is fulfilled on DARWIN by
-loading the Python 3.13.1 interpreter with VALET.
+loading the Miniforge package with VALET.
 
 ## How to run the job
 
@@ -41,7 +41,7 @@ f(x_min) = -127.88015857955023
 Also, it will generate a Slurm log file, `py_min-<job-id>.out`, with `<job-id>` being a number corresponding
 to the ID of your particular job. The contents of this file should be:
 ```
-Adding package `python/3.13.1` to your environment
+Adding package `miniforge/25.11.0-1` to your environment
 
 Initial guess for minimum location: 0
 
